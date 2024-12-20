@@ -1,12 +1,11 @@
 <?php
 if(isset($_POST['submit'])){
 
-
   date_default_timezone_set('Africa/Nairobi');
 
   # access token
-  $consumerKey = 'nk16Y74eSbTaGQgc9WF8j6FigApqOMWr'; //Fill with your app Consumer Key
-  $consumerSecret = '40fD1vRXCq90XFaU'; // Fill with your app Secret
+  $consumerKey = 'vaNbtqxCtoA6p1Z7fp4gHfxvHSLygCmOHJvG9b5qWcpTPMYS'; //Fill with your app Consumer Key
+  $consumerSecret = '3ovAWVWWh4qWNDE3NvYLg2Ca1VownzpHa6sWEAKdZwd7lnNur7afqjmLA0gWQtJb'; // Fill with your app Secret
 
   # define the variales
   # provide the following details, this part is found on your test credentials on the developer account
@@ -23,10 +22,28 @@ if(isset($_POST['submit'])){
     for developer/test accounts, this money will be reversed automatically by midnight.
   */
   
-   $PartyA = $_POST['phone']; // This is your phone number, 
-  $AccountReference = '2255';
-  $TransactionDesc = 'Test Payment';
-  $Amount = $_POST['amount'];
+   $PartyA = $_POST['phone']; // This is your phone number
+   $AccountReference = '2255';
+   $TransactionDesc = 'Test Payment';
+   $Amount = $_POST['amount'];
+  
+  // Normalize the phone number
+  if (substr($PartyA, 0, 1) == '0') {
+      // If phone number starts with '0', change it to '254' (Kenya international format)
+      if (substr($PartyA, 0, 3) == '011') {
+          // If it starts with '011', replace it with '254'
+          $PartyA = '254' . substr($PartyA, 3);
+      } else {
+          // If it starts with '0' but not '011', replace '0' with '254'
+          $PartyA = '254' . substr($PartyA, 1);
+      }
+  }
+
+  // Validate if the phone number is in the correct format
+  if (!preg_match('/^2547\d{8}$/', $PartyA)) {
+      echo "Invalid phone number format. It should be in the format 2547XXXXXXXX";
+      exit;
+  }
  
   # Get the timestamp, format YYYYmmddhms -> 20181004151020
   $Timestamp = date('YmdHis');    
