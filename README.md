@@ -6,36 +6,34 @@ You can use either XAMPP or Heroku for local or online development.
 
 # Using XAMPP (Local Development)
 
-    Why Use XAMPP?
-    XAMPP is a free, open-source platform that provides an easy-to-use local server environment for PHP and MySQL development. It's lightweight, fast to set up, and doesn't require you to verify your application, unlike cloud services like Heroku.
-    Steps to Use XAMPP:
-        Install XAMPP from https://www.apachefriends.org/index.html.
-        Extract the project folder into the htdocs directory in your XAMPP installation directory (usually C:/xampp/htdocs).
-        Open the XAMPP Control Panel and start the Apache server.
-        Open your browser and go to http://localhost/<your_project_folder> to view the application.
+Why Use XAMPP?
+XAMPP is a free, open-source platform that provides an easy-to-use local server environment for PHP and MySQL development. It's lightweight, fast to set up, and doesn't require you to verify your application, unlike cloud services like Heroku.
+
+Steps to Use XAMPP:
+Install XAMPP from https://www.apachefriends.org/index.html.
+Extract the project folder into the htdocs directory in your XAMPP installation directory (usually C:/xampp/htdocs).
+Open the XAMPP Control Panel and start the Apache server.
+Open your browser and go to http://localhost/<your_project_folder> to view the application.
 
 # Using Heroku (Online Deployment)
 
 Why Use Heroku?
 Heroku is a cloud platform as a service (PaaS) that enables you to deploy and run web applications without worrying about server management. If you want your STK Push project to be accessible online, Heroku is a great choice. However, it requires email verification for deployment.
 Steps to Deploy on Heroku:
-        Create a free account on Heroku.
-        Install the Heroku CLI.
-        In the terminal, log in to your Heroku account by running:
+        
+Create a free account on Heroku.
+Install the Heroku CLI.
+In the terminal, log in to your Heroku account by running:
+    heroku login
 
-            heroku login
+Create a new Heroku app:
+    heroku create <your-app-name>
 
-            Create a new Heroku app:
+Push the project to Heroku:
+    git push heroku main
 
-            heroku create <your-app-name>
-
-            Push the project to Heroku:
-
-            git push heroku main
-
-            Open the app in your browser:
-
-            heroku open
+Open the app in your browser:
+    heroku open
 
 # Configuration
 
