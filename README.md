@@ -16,9 +16,9 @@ You can use either XAMPP or Heroku for local or online development.
 
 # Using Heroku (Online Deployment)
 
-    Why Use Heroku?
-    Heroku is a cloud platform as a service (PaaS) that enables you to deploy and run web applications without worrying about server management. If you want your STK Push project to be accessible online, Heroku is a great choice. However, it requires email verification for deployment.
-    Steps to Deploy on Heroku:
+Why Use Heroku?
+Heroku is a cloud platform as a service (PaaS) that enables you to deploy and run web applications without worrying about server management. If you want your STK Push project to be accessible online, Heroku is a great choice. However, it requires email verification for deployment.
+Steps to Deploy on Heroku:
         Create a free account on Heroku.
         Install the Heroku CLI.
         In the terminal, log in to your Heroku account by running:
